@@ -1,1 +1,575 @@
 
+    <meta charset="UTF-8">
+    <style>
+        h1 {
+            color: #4A90E2;
+            margin-top: 50px;
+            font-size: 2.5em;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .description {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .file-input-container {
+            margin-top: 20px;
+        }
+        #csvFileInput {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #4A90E2;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+            margin-left:600px;
+        }
+        #csvFileInput:hover {
+            background-color: #f0f8ff;
+        }
+        .graphs-container {
+            display: none;
+            margin-top: 30px;
+        }
+        .graphs-container div {
+            margin-bottom: 30px;
+        }
+        .graphs-container iframe {
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .img{
+          width:80%;
+        }
+        h3{
+          width:30%;
+          margin-left:630px;
+        }
+    </style>
+    <h3>Veuillez selectionner un fichier</h3><input type="file" id="csvFileInput" accept=".csv" onchange="importCSV()"><div id="graphs" style="display: none;"><div style='display: flex; justify-content: space-between; margin-bottom: 20px;'><div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>                <div id="68ccf108-c764-4f1e-b2d9-fbd1992faca0" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("68ccf108-c764-4f1e-b2d9-fbd1992faca0")) {                    Plotly.newPlot(                        "68ccf108-c764-4f1e-b2d9-fbd1992faca0",                        [{"marker":{"color":"skyblue"},"mode":"lines+markers","name":"Naissances","x":[2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000],"y":[3553,3689,3768,3775,3699,3866,3868,4021,3945,4224,4228,4317,4410,4615,4580,4657,4458,4637,4492,4472,4532,4777,4905,4958],"type":"scatter"},{"marker":{"color":"salmon"},"mode":"lines+markers","name":"D\u00e9c\u00e8s","x":[2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000],"y":[1775,1681,2311,1711,1626,1618,1612,1394,1409,1442,1445,1360,1242,1261,1262,1168,1190,1134,1224,1106,1109,1108,1154,1020],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"\u00c9volution des Naissances et D\u00e9c\u00e8s (2000-2023)"},"xaxis":{"title":{"text":"Ann\u00e9e"}},"yaxis":{"title":{"text":"Nombre"}}},                        {"responsive": true}                    )                };                            </script>        </div><div>                            <div id="698b631d-0821-485c-9f20-e554b6fce085" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("698b631d-0821-485c-9f20-e554b6fce085")) {                    Plotly.newPlot(                        "698b631d-0821-485c-9f20-e554b6fce085",                        [{"marker":{"color":"skyblue"},"name":"Naissances","x":[2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000],"y":[3553,3689,3768,3775,3699,3866,3868,4021,3945,4224,4228,4317,4410,4615,4580,4657,4458,4637,4492,4472,4532,4777,4905,4958],"type":"bar"},{"marker":{"color":"salmon"},"name":"D\u00e9c\u00e8s","x":[2023,2022,2021,2020,2019,2018,2017,2016,2015,2014,2013,2012,2011,2010,2009,2008,2007,2006,2005,2004,2003,2002,2001,2000],"y":[1775,1681,2311,1711,1626,1618,1612,1394,1409,1442,1445,1360,1242,1261,1262,1168,1190,1134,1224,1106,1109,1108,1154,1020],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"title":{"text":"Ann\u00e9e"},"tickmode":"array","tickvals":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]},"title":{"text":"Comparaison des Naissances et D\u00e9c\u00e8s (2000-2023)"},"yaxis":{"title":{"text":"Nombre"}},"barmode":"group"},                        {"responsive": true}                    )                };                            </script>        </div></div><div style='display: flex; justify-content: space-between; margin-bottom: 20px;'><div>                            <div id="0f983a08-99bf-407c-9fbe-72c377d08f16" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("0f983a08-99bf-407c-9fbe-72c377d08f16")) {                    Plotly.newPlot(                        "0f983a08-99bf-407c-9fbe-72c377d08f16",                        [{"alignmentgroup":"True","hovertemplate":"Tranche d'\u00c2ge=%{x}\u003cbr\u003eNombre de Naissances=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 15-19 ans","marker":{"color":"#636efa"},"name":"f\u00e9con 15-19 ans","notched":false,"offsetgroup":"f\u00e9con 15-19 ans","orientation":"v","showlegend":true,"x":["f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans","f\u00e9con 15-19 ans"],"x0":" ","xaxis":"x","y":["0,0253","0,0258","0,0266","0,0294","0,0308","0,0322","0,0334","0,0335","0,0351","0,0409","0,0392","0,0405","0,0424","0,042","0,0415","0,0406","0,0404","0,0428","0,0421","0,0411","0,0432","0,0482","0,0481","0,0501","0,0488","0,0458","0,0499","0,0471","0,0488","0,0496","0,0607","0,0581","0,0612","0,0614","0,0642","0,0738","0,0714","0,0784","0,0774","0,0772"],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"Tranche d'\u00c2ge=%{x}\u003cbr\u003eNombre de Naissances=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 20-24 ans","marker":{"color":"#EF553B"},"name":"f\u00e9con 20-24 ans","notched":false,"offsetgroup":"f\u00e9con 20-24 ans","orientation":"v","showlegend":true,"x":["f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans","f\u00e9con 20-24 ans"],"x0":" ","xaxis":"x","y":["0,0827","0,0828","0,0878","0,0864","0,089","0,0886","0,0925","0,0941","0,0895","0,0998","0,1018","0,0978","0,1007","0,1074","0,1057","0,1127","0,1058","0,1155","0,1166","0,1139","0,1215","0,1354","0,1438","0,145","0,1526","0,1407","0,1443","0,1528","0,1563","0,1659","0,1784","0,1788","0,1888","0,1999","0,2034","0,2191","0,2194","0,2283","0,241","0,2405"],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"Tranche d'\u00c2ge=%{x}\u003cbr\u003eNombre de Naissances=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 25-29 ans","marker":{"color":"#00cc96"},"name":"f\u00e9con 25-29 ans","notched":false,"offsetgroup":"f\u00e9con 25-29 ans","orientation":"v","showlegend":true,"x":["f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans","f\u00e9con 25-29 ans"],"x0":" ","xaxis":"x","y":["0,0883","0,0886","0,0897","0,0901","0,089","0,0862","0,0862","0,0919","0,0894","0,0956","0,0966","0,0955","0,1039","0,1089","0,1096","0,1088","0,112","0,117","0,1077","0,1114","0,1135","0,1239","0,1343","0,1367","0,1319","0,1353","0,1386","0,1399","0,1494","0,1663","0,1662","0,1765","0,1809","0,1856","0,1876","0,2062","0,1922","0,1936","0,1954","0,1969"],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"Tranche d'\u00c2ge=%{x}\u003cbr\u003eNombre de Naissances=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 30-34 ans","marker":{"color":"#ab63fa"},"name":"f\u00e9con 30-34 ans","notched":false,"offsetgroup":"f\u00e9con 30-34 ans","orientation":"v","showlegend":true,"x":["f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans","f\u00e9con 30-34 ans"],"x0":" ","xaxis":"x","y":["0,0784","0,0846","0,081","0,0808","0,0726","0,0789","0,082","0,0805","0,0788","0,0841","0,0804","0,0894","0,0835","0,0915","0,0947","0,0945","0,0913","0,089","0,0928","0,0956","0,0954","0,098","0,1017","0,1029","0,1016","0,0949","0,1038","0,108","0,1145","0,1129","0,1168","0,1171","0,1226","0,129","0,1283","0,1332","0,1283","0,1334","0,1317","0,1312"],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"Tranche d'\u00c2ge=%{x}\u003cbr\u003eNombre de Naissances=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 35-39 ans","marker":{"color":"#FFA15A"},"name":"f\u00e9con 35-39 ans","notched":false,"offsetgroup":"f\u00e9con 35-39 ans","orientation":"v","showlegend":true,"x":["f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans","f\u00e9con 35-39 ans"],"x0":" ","xaxis":"x","y":["0,0535","0,0564","0,0588","0,0549","0,0513","0,0561","0,0484","0,0508","0,0524","0,0499","0,051","0,0563","0,0558","0,0592","0,0556","0,0602","0,0549","0,0555","0,0555","0,0532","0,0552","0,0574","0,0538","0,0597","0,0603","0,0554","0,0543","0,0662","0,0586","0,0608","0,0633","0,065","0,0649","0,0773","0,0738","0,0776","0,0677","0,0697","0,079","0,0711"],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"Tranche d'\u00c2ge=%{x}\u003cbr\u003eNombre de Naissances=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 40-44 ans","marker":{"color":"#19d3f3"},"name":"f\u00e9con 40-44 ans","notched":false,"offsetgroup":"f\u00e9con 40-44 ans","orientation":"v","showlegend":true,"x":["f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans","f\u00e9con 40-44 ans"],"x0":" ","xaxis":"x","y":["0,0228","0,0195","0,0192","0,0186","0,0174","0,02","0,0171","0,0215","0,0191","0,0172","0,0181","0,0197","0,0197","0,0198","0,0197","0,018","0,0152","0,0178","0,0167","0,0198","0,0176","0,0171","0,0157","0,0195","0,0165","0,0178","0,0208","0,021","0,0179","0,0233","0,023","0,0235","0,0227","0,024","0,0221","0,022","0,0247","0,0222","0,0295","0,0324"],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","hovertemplate":"Tranche d'\u00c2ge=%{x}\u003cbr\u003eNombre de Naissances=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 45-49 ans","marker":{"color":"#FF6692"},"name":"f\u00e9con 45-49 ans","notched":false,"offsetgroup":"f\u00e9con 45-49 ans","orientation":"v","showlegend":true,"x":["f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans","f\u00e9con 45-49 ans"],"x0":" ","xaxis":"x","y":["0,0012","0,0014","0,0016","0,0022","0,0017","0,0019","0,0015","0,0015","0,0015","0,0019","0,0028","0,0016","0,0014","0,0015","0,0012","0,0017","0,001","0,0019","0,0018","0,0011","0,0007","0,0009","0,0015","0,0008","0,0011","0,0015","0,0016","0,0013","0,0013","0,0016","0,0014","0,0017","0,0015","0,0015","0,0041","0,0029","0,0017","0,0034","0,0044","0,0031"],"y0":" ","yaxis":"y","type":"box"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#f2f5fa"},"error_y":{"color":"#f2f5fa"},"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"baxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"line":{"color":"#283442"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"marker":{"line":{"color":"#283442"}},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#506784"},"line":{"color":"rgb(17,17,17)"}},"header":{"fill":{"color":"#2a3f5f"},"line":{"color":"rgb(17,17,17)"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#f2f5fa","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#f2f5fa"},"geo":{"bgcolor":"rgb(17,17,17)","lakecolor":"rgb(17,17,17)","landcolor":"rgb(17,17,17)","showlakes":true,"showland":true,"subunitcolor":"#506784"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"dark"},"paper_bgcolor":"rgb(17,17,17)","plot_bgcolor":"rgb(17,17,17)","polar":{"angularaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","radialaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"yaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"zaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"}},"shapedefaults":{"line":{"color":"#f2f5fa"}},"sliderdefaults":{"bgcolor":"#C8D4E3","bordercolor":"rgb(17,17,17)","borderwidth":1,"tickwidth":0},"ternary":{"aaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"baxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","caxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"title":{"x":0.05},"updatemenudefaults":{"bgcolor":"#506784","borderwidth":0},"xaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Tranche d'\u00c2ge"},"categoryorder":"array","categoryarray":["f\u00e9con 15-19 ans","f\u00e9con 20-24 ans","f\u00e9con 25-29 ans","f\u00e9con 30-34 ans","f\u00e9con 35-39 ans","f\u00e9con 40-44 ans","f\u00e9con 45-49 ans"]},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Nombre de Naissances"}},"legend":{"title":{"text":"Tranche d'\u00c2ge"},"tracegroupgap":0},"title":{"text":"Distribution de la F\u00e9condit\u00e9 par Tranche d'\u00c2ge"},"boxmode":"overlay"},                        {"responsive": true}                    )                };                            </script>        </div><div style='width: 48%; margin-left: 180px;'>
+<!-- Code de la carte -->
+  <style>
+        #chartdiv {
+          width: 80%;
+          height: 600px;
+        }
+         .popup-container {
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .popup-image {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+            margin-right:30px;
+        }
+    </style>
+<div id="chartdiv"></div>
+  <div id="popup" class="popup-container">
+      <img id="popup-image" class="popup-image" src="" alt="Location Image">
+      <p id="popup-text"></p>
+  </div>
+ <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+
+<script>
+      am5.ready(function() {
+        var root = am5.Root.new("chartdiv");
+        root.setThemes([
+          am5themes_Animated.new(root)
+        ]);
+        var chart = root.container.children.push(
+          am5map.MapChart.new(root, {
+            panX: "translateX",
+            panY: "translateY",
+            projection: am5map.geoMercator()
+          })
+        );
+        
+        // Add labels and controls
+        var cont = chart.children.push(
+          am5.Container.new(root, {
+            layout: root.horizontalLayout,
+            x: 20,
+            y: 40
+          })
+        );
+        
+        cont.children.push(
+          am5.Label.new(root, {
+            centerY: am5.p50,
+            text: "Map"
+          })
+        );
+        
+        var switchButton = cont.children.push(
+          am5.Button.new(root, {
+            themeTags: ["switch"],
+            centerY: am5.p50,
+            icon: am5.Circle.new(root, {
+              themeTags: ["icon"]
+            })
+          })
+        );
+        
+        switchButton.on("active", function () {
+          if (!switchButton.get("active")) {
+            chart.set("projection", am5map.geoMercator());
+            chart.set("panX", "translateX");
+            chart.set("panY", "translateY");
+          } else {
+            chart.set("projection", am5map.geoOrthographic());
+            chart.set("panX", "rotateX");
+            chart.set("panY", "rotateY");
+          }
+        });
+        
+        cont.children.push(
+          am5.Label.new(root, {
+            centerY: am5.p50,
+            text: "Globe"
+          })
+        );
+        var polygonSeries = chart.series.push(
+          am5map.MapPolygonSeries.new(root, {
+            geoJSON: am5geodata_worldLow
+          })
+        );
+        
+        var graticuleSeries = chart.series.push(am5map.GraticuleSeries.new(root, {}));
+        graticuleSeries.mapLines.template.setAll({
+          stroke: root.interfaceColors.get("alternativeBackground"),
+          strokeOpacity: 0.08
+        });
+        
+        
+        var lineSeries = chart.series.push(am5map.MapLineSeries.new(root, {}));
+        lineSeries.mapLines.template.setAll({
+          stroke: root.interfaceColors.get("alternativeBackground"),
+          strokeOpacity: 0.6
+        });
+        
+     
+        var originSeries = chart.series.push(
+                am5map.MapPointSeries.new(root, { idField: "id" })
+            );
+
+            originSeries.bullets.push(function () {
+                var circle = am5.Circle.new(root, {
+                    radius: 7,
+                    tooltipText: "{title} (Click me!)",
+                    cursorOverStyle: "pointer",
+                    tooltipY: 0,
+                    fill: am5.color(0xffba00),
+                    stroke: root.interfaceColors.get("background"),
+                    strokeWidth: 2
+                });
+
+                circle.events.on("click", function (e) {
+                    showPopup(e.target.dataItem.dataContext);
+                });
+
+                return am5.Bullet.new(root, {
+                    sprite: circle
+                });
+            });
+
+            var destinationSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
+
+            destinationSeries.bullets.push(function () {
+                var circle = am5.Circle.new(root, {
+                    radius: 5,
+                    tooltipText: "{title}",
+                    tooltipY: 0,
+                    fill: am5.color(0xffba00),
+                    stroke: root.interfaceColors.get("background"),
+                    strokeWidth: 2
+                });
+
+                circle.events.on("click", function (e) {
+                    showPopup(e.target.dataItem.dataContext);
+                });
+
+                return am5.Bullet.new(root, {
+                    sprite: circle
+                });
+            });
+
+    
+        var button = root.container.children.push(
+          am5.Button.new(root, {
+            x: am5.p50,
+            y: 60,
+            centerX: am5.p50,
+            label: am5.Label.new(root, {
+              text: "Change origin",
+              centerY: am5.p50
+            }),
+            icon: am5.Graphics.new(root, {
+              svgPath: "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47",
+              scale: 0.1,
+              centerY: am5.p50,
+              centerX: am5.p50,
+              fill: am5.color(0xffffff)
+            })
+          })
+        );
+        
+        button.events.on("click", function () {
+          if (currentId == "vilnius") {
+            selectOrigin("paris");
+          } else {
+            selectOrigin("vilnius");
+          }
+        });
+        
+        var originCities = [
+          {
+            id: "paris",
+            title: "Paris",
+            destinations: [
+              "polynesie",
+              "guadeloupe",
+              "guayanne",
+              "reunion",
+              "martinique",
+              "mayotte",
+              "nouvellecaledonie",
+              "saintmartin"
+            ],
+            geometry: { type: "Point", coordinates: [2.3522, 48.8566] },
+            zoomLevel: 2.74,
+            zoomPoint: { longitude: -20.1341, latitude: 49.1712 }
+          },
+          
+        ];
+        
+        var destinationCities = [
+          {
+            id: "polynesie",
+            title: "Centre hospitalier de la (Polyn�sie fran�aise)",
+            geometry: { type: "Point", coordinates: [-149.546435,-17.528017]
+            },
+            imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },
+          {
+            id: "guadeloupe",
+            title: "Centre Hospitalier Universitaire Pointe-�-Pitre (Guadeloupe)",
+            geometry: { type: "Point", coordinates: [-61.525326,16.2371],
+            },
+            imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },
+          {
+            id: "guayanne",
+            title: "Andr�e-Rosemon Hospital (Guayanne)",
+            geometry: { type: "Point", coordinates: [-52.3207,4.92453] },
+                        imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+            
+
+          },
+          {
+            id: "reunion",
+            title: "CHU de la Reunion",
+            geometry: { type: "Point", coordinates: [55.444,-20.8908] },
+                        imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },
+          {
+            id: "martinique",
+            title: "CHU Martinique",
+            geometry: { type: "Point", coordinates: [-61.0242,14.6415] },
+                        imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },
+          {
+            id: "mayotte",
+            title: "Centre Hospitalier de Mayotte",
+            geometry: { type: "Point", coordinates: [45.1662,-12.8275] },
+                        imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },
+          {
+            id: "nouvellecaledonie",
+            title: "Centre hospitalier territorial Gaston-Bourret de Nouvelle-Cal�donie",
+            geometry: { type: "Point", coordinates: [165.6180,-20.9043] },
+                        imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },
+          {
+            id: "saintmartin",
+            title: "CHU saint Martin",
+            geometry: { type: "Point", coordinates: [-63.0501,18.0708] },
+                        imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },      
+          {
+            id: "paris",
+            title: "Paris",
+            geometry: { type: "Point", coordinates: [2.351, 48.8567] },
+                        imageURL:"https://upload.wikimedia.org/wikipedia/commons/3/3f/H%C3%B4tel-Dieu_de_Tonnerre.jpg"
+          },
+        ];
+        
+        originSeries.data.setAll(originCities);
+        destinationSeries.data.setAll(destinationCities);
+        
+        function selectOrigin(id) {
+          currentId = id;
+          var dataItem = originSeries.getDataItemById(id);
+          var dataContext = dataItem.dataContext;
+          chart.zoomToGeoPoint(dataContext.zoomPoint, dataContext.zoomLevel, true);
+        
+          var destinations = dataContext.destinations;
+          var lineSeriesData = [];
+          var originLongitude = dataItem.get("longitude");
+          var originLatitude = dataItem.get("latitude");
+        
+          am5.array.each(destinations, function (did) {
+            var destinationDataItem = destinationSeries.getDataItemById(did);
+            if (!destinationDataItem) {
+              destinationDataItem = originSeries.getDataItemById(did);
+            }
+            lineSeriesData.push({
+              geometry: {
+                type: "LineString",
+                coordinates: [
+                  [originLongitude, originLatitude],
+                  [
+                    destinationDataItem.get("longitude"),
+                    destinationDataItem.get("latitude")
+                  ]
+                ]
+              }
+            });
+          });
+          lineSeries.data.setAll(lineSeriesData);
+        }
+        
+        var currentId = "paris";
+        
+        destinationSeries.events.on("datavalidated", function () {
+          selectOrigin(currentId);
+        });
+        
+        chart.appear(1000, 100);
+        
+        });
+
+        let currentPopupData = null; // Variable pour suivre le dernier point cliqu�
+
+function showPopup(data) {
+    const popup = document.getElementById("popup");
+    const popupImage = document.getElementById("popup-image");
+    const popupText = document.getElementById("popup-text");
+
+    // Si le popup est d�j� affich� pour ce point, le masquer
+    if (currentPopupData === data) {
+        hidePopup();
+        currentPopupData = null;
+    } else {
+        // Sinon, afficher le popup
+        popupImage.src = data.imageURL;
+        popupText.textContent = data.title;
+
+        popup.style.display = "block";
+        popup.style.left = `${event.pageX}px`;
+        popup.style.top = `${event.pageY}px`;
+
+        currentPopupData = data; // Mettre � jour le dernier point cliqu�
+    }
+}
+
+function hidePopup() {
+    const popup = document.getElementById("popup");
+    popup.style.display = "none";
+    currentPopupData = null; // R�initialiser le dernier point cliqu�
+}
+
+// Masquer le popup si on clique en dehors des points
+chart.seriesContainer.events.on("pointerdown", function () {
+    hidePopup();
+});
+
+        </script>    
+</div></div><div style='display: flex; justify-content: space-between; margin-bottom: 20px;'><div>                            <div id="056f93f6-c0c6-4ede-a0da-a3824892bd6a" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("056f93f6-c0c6-4ede-a0da-a3824892bd6a")) {                    Plotly.newPlot(                        "056f93f6-c0c6-4ede-a0da-a3824892bd6a",                        [{"contours":{"coloring":"none"},"hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 15-19 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003eindex=%{y}\u003cbr\u003ecount=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 15-19 ans","line":{"color":"#636efa"},"name":"f\u00e9con 15-19 ans","showlegend":true,"x":["0,0253","0,0258","0,0266","0,0294","0,0308","0,0322","0,0334","0,0335","0,0351","0,0409","0,0392","0,0405","0,0424","0,042","0,0415","0,0406","0,0404","0,0428","0,0421","0,0411","0,0432","0,0482","0,0481","0,0501","0,0488","0,0458","0,0499","0,0471","0,0488","0,0496","0,0607","0,0581","0,0612","0,0614","0,0642","0,0738","0,0714","0,0784","0,0774","0,0772"],"xaxis":"x","xbingroup":"x","y":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39],"yaxis":"y","ybingroup":"y","type":"histogram2dcontour"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 15-19 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 15-19 ans","marker":{"color":"#636efa"},"name":"f\u00e9con 15-19 ans","offsetgroup":"f\u00e9con 15-19 ans","opacity":0.5,"showlegend":false,"x":["0,0253","0,0258","0,0266","0,0294","0,0308","0,0322","0,0334","0,0335","0,0351","0,0409","0,0392","0,0405","0,0424","0,042","0,0415","0,0406","0,0404","0,0428","0,0421","0,0411","0,0432","0,0482","0,0481","0,0501","0,0488","0,0458","0,0499","0,0471","0,0488","0,0496","0,0607","0,0581","0,0612","0,0614","0,0642","0,0738","0,0714","0,0784","0,0774","0,0772"],"xaxis":"x2","yaxis":"y2","type":"histogram"},{"contours":{"coloring":"none"},"hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 20-24 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003eindex=%{y}\u003cbr\u003ecount=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 20-24 ans","line":{"color":"#EF553B"},"name":"f\u00e9con 20-24 ans","showlegend":true,"x":["0,0827","0,0828","0,0878","0,0864","0,089","0,0886","0,0925","0,0941","0,0895","0,0998","0,1018","0,0978","0,1007","0,1074","0,1057","0,1127","0,1058","0,1155","0,1166","0,1139","0,1215","0,1354","0,1438","0,145","0,1526","0,1407","0,1443","0,1528","0,1563","0,1659","0,1784","0,1788","0,1888","0,1999","0,2034","0,2191","0,2194","0,2283","0,241","0,2405"],"xaxis":"x","xbingroup":"x","y":[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79],"yaxis":"y","ybingroup":"y","type":"histogram2dcontour"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 20-24 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 20-24 ans","marker":{"color":"#EF553B"},"name":"f\u00e9con 20-24 ans","offsetgroup":"f\u00e9con 20-24 ans","opacity":0.5,"showlegend":false,"x":["0,0827","0,0828","0,0878","0,0864","0,089","0,0886","0,0925","0,0941","0,0895","0,0998","0,1018","0,0978","0,1007","0,1074","0,1057","0,1127","0,1058","0,1155","0,1166","0,1139","0,1215","0,1354","0,1438","0,145","0,1526","0,1407","0,1443","0,1528","0,1563","0,1659","0,1784","0,1788","0,1888","0,1999","0,2034","0,2191","0,2194","0,2283","0,241","0,2405"],"xaxis":"x2","yaxis":"y2","type":"histogram"},{"contours":{"coloring":"none"},"hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 25-29 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003eindex=%{y}\u003cbr\u003ecount=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 25-29 ans","line":{"color":"#00cc96"},"name":"f\u00e9con 25-29 ans","showlegend":true,"x":["0,0883","0,0886","0,0897","0,0901","0,089","0,0862","0,0862","0,0919","0,0894","0,0956","0,0966","0,0955","0,1039","0,1089","0,1096","0,1088","0,112","0,117","0,1077","0,1114","0,1135","0,1239","0,1343","0,1367","0,1319","0,1353","0,1386","0,1399","0,1494","0,1663","0,1662","0,1765","0,1809","0,1856","0,1876","0,2062","0,1922","0,1936","0,1954","0,1969"],"xaxis":"x","xbingroup":"x","y":[80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119],"yaxis":"y","ybingroup":"y","type":"histogram2dcontour"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 25-29 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 25-29 ans","marker":{"color":"#00cc96"},"name":"f\u00e9con 25-29 ans","offsetgroup":"f\u00e9con 25-29 ans","opacity":0.5,"showlegend":false,"x":["0,0883","0,0886","0,0897","0,0901","0,089","0,0862","0,0862","0,0919","0,0894","0,0956","0,0966","0,0955","0,1039","0,1089","0,1096","0,1088","0,112","0,117","0,1077","0,1114","0,1135","0,1239","0,1343","0,1367","0,1319","0,1353","0,1386","0,1399","0,1494","0,1663","0,1662","0,1765","0,1809","0,1856","0,1876","0,2062","0,1922","0,1936","0,1954","0,1969"],"xaxis":"x2","yaxis":"y2","type":"histogram"},{"contours":{"coloring":"none"},"hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 30-34 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003eindex=%{y}\u003cbr\u003ecount=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 30-34 ans","line":{"color":"#ab63fa"},"name":"f\u00e9con 30-34 ans","showlegend":true,"x":["0,0784","0,0846","0,081","0,0808","0,0726","0,0789","0,082","0,0805","0,0788","0,0841","0,0804","0,0894","0,0835","0,0915","0,0947","0,0945","0,0913","0,089","0,0928","0,0956","0,0954","0,098","0,1017","0,1029","0,1016","0,0949","0,1038","0,108","0,1145","0,1129","0,1168","0,1171","0,1226","0,129","0,1283","0,1332","0,1283","0,1334","0,1317","0,1312"],"xaxis":"x","xbingroup":"x","y":[120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159],"yaxis":"y","ybingroup":"y","type":"histogram2dcontour"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 30-34 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 30-34 ans","marker":{"color":"#ab63fa"},"name":"f\u00e9con 30-34 ans","offsetgroup":"f\u00e9con 30-34 ans","opacity":0.5,"showlegend":false,"x":["0,0784","0,0846","0,081","0,0808","0,0726","0,0789","0,082","0,0805","0,0788","0,0841","0,0804","0,0894","0,0835","0,0915","0,0947","0,0945","0,0913","0,089","0,0928","0,0956","0,0954","0,098","0,1017","0,1029","0,1016","0,0949","0,1038","0,108","0,1145","0,1129","0,1168","0,1171","0,1226","0,129","0,1283","0,1332","0,1283","0,1334","0,1317","0,1312"],"xaxis":"x2","yaxis":"y2","type":"histogram"},{"contours":{"coloring":"none"},"hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 35-39 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003eindex=%{y}\u003cbr\u003ecount=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 35-39 ans","line":{"color":"#FFA15A"},"name":"f\u00e9con 35-39 ans","showlegend":true,"x":["0,0535","0,0564","0,0588","0,0549","0,0513","0,0561","0,0484","0,0508","0,0524","0,0499","0,051","0,0563","0,0558","0,0592","0,0556","0,0602","0,0549","0,0555","0,0555","0,0532","0,0552","0,0574","0,0538","0,0597","0,0603","0,0554","0,0543","0,0662","0,0586","0,0608","0,0633","0,065","0,0649","0,0773","0,0738","0,0776","0,0677","0,0697","0,079","0,0711"],"xaxis":"x","xbingroup":"x","y":[160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199],"yaxis":"y","ybingroup":"y","type":"histogram2dcontour"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 35-39 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 35-39 ans","marker":{"color":"#FFA15A"},"name":"f\u00e9con 35-39 ans","offsetgroup":"f\u00e9con 35-39 ans","opacity":0.5,"showlegend":false,"x":["0,0535","0,0564","0,0588","0,0549","0,0513","0,0561","0,0484","0,0508","0,0524","0,0499","0,051","0,0563","0,0558","0,0592","0,0556","0,0602","0,0549","0,0555","0,0555","0,0532","0,0552","0,0574","0,0538","0,0597","0,0603","0,0554","0,0543","0,0662","0,0586","0,0608","0,0633","0,065","0,0649","0,0773","0,0738","0,0776","0,0677","0,0697","0,079","0,0711"],"xaxis":"x2","yaxis":"y2","type":"histogram"},{"contours":{"coloring":"none"},"hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 40-44 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003eindex=%{y}\u003cbr\u003ecount=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 40-44 ans","line":{"color":"#19d3f3"},"name":"f\u00e9con 40-44 ans","showlegend":true,"x":["0,0228","0,0195","0,0192","0,0186","0,0174","0,02","0,0171","0,0215","0,0191","0,0172","0,0181","0,0197","0,0197","0,0198","0,0197","0,018","0,0152","0,0178","0,0167","0,0198","0,0176","0,0171","0,0157","0,0195","0,0165","0,0178","0,0208","0,021","0,0179","0,0233","0,023","0,0235","0,0227","0,024","0,0221","0,022","0,0247","0,0222","0,0295","0,0324"],"xaxis":"x","xbingroup":"x","y":[200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239],"yaxis":"y","ybingroup":"y","type":"histogram2dcontour"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 40-44 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 40-44 ans","marker":{"color":"#19d3f3"},"name":"f\u00e9con 40-44 ans","offsetgroup":"f\u00e9con 40-44 ans","opacity":0.5,"showlegend":false,"x":["0,0228","0,0195","0,0192","0,0186","0,0174","0,02","0,0171","0,0215","0,0191","0,0172","0,0181","0,0197","0,0197","0,0198","0,0197","0,018","0,0152","0,0178","0,0167","0,0198","0,0176","0,0171","0,0157","0,0195","0,0165","0,0178","0,0208","0,021","0,0179","0,0233","0,023","0,0235","0,0227","0,024","0,0221","0,022","0,0247","0,0222","0,0295","0,0324"],"xaxis":"x2","yaxis":"y2","type":"histogram"},{"contours":{"coloring":"none"},"hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 45-49 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003eindex=%{y}\u003cbr\u003ecount=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 45-49 ans","line":{"color":"#FF6692"},"name":"f\u00e9con 45-49 ans","showlegend":true,"x":["0,0012","0,0014","0,0016","0,0022","0,0017","0,0019","0,0015","0,0015","0,0015","0,0019","0,0028","0,0016","0,0014","0,0015","0,0012","0,0017","0,001","0,0019","0,0018","0,0011","0,0007","0,0009","0,0015","0,0008","0,0011","0,0015","0,0016","0,0013","0,0013","0,0016","0,0014","0,0017","0,0015","0,0015","0,0041","0,0029","0,0017","0,0034","0,0044","0,0031"],"xaxis":"x","xbingroup":"x","y":[240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279],"yaxis":"y","ybingroup":"y","type":"histogram2dcontour"},{"alignmentgroup":"True","bingroup":"x","hovertemplate":"Tranche d'\u00c2ge=f\u00e9con 45-49 ans\u003cbr\u003eNombre de Naissances=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"f\u00e9con 45-49 ans","marker":{"color":"#FF6692"},"name":"f\u00e9con 45-49 ans","offsetgroup":"f\u00e9con 45-49 ans","opacity":0.5,"showlegend":false,"x":["0,0012","0,0014","0,0016","0,0022","0,0017","0,0019","0,0015","0,0015","0,0015","0,0019","0,0028","0,0016","0,0014","0,0015","0,0012","0,0017","0,001","0,0019","0,0018","0,0011","0,0007","0,0009","0,0015","0,0008","0,0011","0,0015","0,0016","0,0013","0,0013","0,0016","0,0014","0,0017","0,0015","0,0015","0,0041","0,0029","0,0017","0,0034","0,0044","0,0031"],"xaxis":"x2","yaxis":"y2","type":"histogram"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Nombre de Naissances"}},"yaxis":{"anchor":"x","domain":[0.0,0.7326],"title":{"text":"index"}},"xaxis2":{"anchor":"y2","domain":[0.0,1.0],"matches":"x","showticklabels":false,"showgrid":true},"yaxis2":{"anchor":"x2","domain":[0.7426,1.0],"matches":"y2","showticklabels":false,"showline":false,"ticks":"","showgrid":true},"legend":{"title":{"text":"Tranche d'\u00c2ge"},"tracegroupgap":0},"title":{"text":"Courbes de Densit\u00e9 de la F\u00e9condit\u00e9 par Tranche d'\u00c2ge"},"barmode":"overlay"},                        {"responsive": true}                    )                };                            </script>        </div><div class="image-container" style="text-align: center; margin-top: 30px;"><img class="img" src="./graphe.jpg" alt="Cinqui�me graphique"></div></div>
+    <div style="margin-top: 30px; text-align: center;">
+    <textarea id="inputText" rows="5" cols="50" placeholder="Entrez un paragraphe ici..." style="
+        width: 50%; 
+        height:30%;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        resize: none;
+        transition: border-color 0.3s;">
+    </textarea><br>
+    <button onclick="generateWordCloud()" style="
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top:15px;">
+        Afficher du nuage
+    </button>
+</div>
+    <div id="wordCloud" style="margin-top: 30px; text-align: center; height: 400px;"></div>
+    </div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+
+<script>
+    // Fonction pour importer un fichier CSV
+    function importCSV() {
+        const fileInput = document.getElementById('csvFileInput');
+        const file = fileInput.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const csvData = event.target.result;
+                const rows = csvData.split('\n').map(row => row.split(';')); // S�parer les lignes et les colonnes
+                displayGraphs();  // Afficher les graphiques apr�s importation
+            };
+
+            reader.onerror = function(error) {
+                alert('Erreur lors de la lecture du fichier CSV : ' + error);
+            };
+
+            reader.readAsText(file);
+        } else {
+            alert('Veuillez s�lectionner un fichier CSV.');
+        }
+    }
+
+    // Fonction pour afficher les graphiques
+    function displayGraphs() {
+        document.getElementById('graphs').style.display = 'block';
+    }
+
+    
+</script>
+            <script>
+  // Fonction pour cr�er le nuage de mots
+  function wordCloud(selector) {
+      var fill = d3.scale.category20();
+
+      // Cr�e un �l�ment SVG pour le nuage de mots
+      var svg = d3.select(selector).append("svg")
+          .attr("width", 500)
+          .attr("height", 500)
+          .append("g")
+          .attr("transform", "translate(250,250)");
+
+      // Fonction pour dessiner les mots
+      function draw(words) {
+          var cloud = svg.selectAll("g text")
+                          .data(words, function(d) { return d.text; });
+
+          cloud.enter()
+              .append("text")
+              .style("font-family", "Impact")
+              .style("fill", function(d, i) { return fill(i); })
+              .attr("text-anchor", "middle")
+              .attr('font-size', 1)
+              .text(function(d) { return d.text; });
+
+          // Transition pour animer le mouvement et l'apparition des mots
+          cloud.transition()
+              .duration(1000) // Dur�e de la transition
+              .style("font-size", function(d) { return d.size + "px"; })
+              .attr("transform", function(d) {
+                  return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+              })
+              .style("fill-opacity", 1);
+
+          cloud.exit()
+              .transition()
+              .duration(200)
+              .style('fill-opacity', 1e-6)
+              .attr('font-size', 1)
+              .remove();
+      }
+
+      return {
+          update: function(words) {
+              // Calculer la disposition des mots et leur position
+              d3.layout.cloud().size([500, 500])
+                  .words(words)
+                  .padding(5)
+                  .rotate(function() { return ~~(Math.random() * 2) * 90; })
+                  .font("Impact")
+                  .fontSize(function(d) { return d.size; })
+                  .on("end", draw)
+                  .start();
+          },
+          animateWords: function() {
+              // Animer les mots avec un mouvement continu
+              var cloud = svg.selectAll("g text");
+              setInterval(function() {
+                  cloud.transition()
+                       .duration(1500)
+                       .attr("transform", function(d) {
+                           var randomX = Math.random() * 500 - 250; // D�placement al�atoire en X
+                           var randomY = Math.random() * 500 - 250; // D�placement al�atoire en Y
+                           return "translate(" + [randomX, randomY] + ")rotate(" + d.rotate + ")";
+                       })
+                       .style("fill-opacity", function() { return Math.random(); }); // Changer l'opacit� al�atoirement
+              }, 2000); // Toutes les 2 secondes
+          }
+      }
+  }
+
+  // Fonction pour g�n�rer le nuage de mots � partir du texte entr�
+  function generateWordCloud() {
+      var text = document.getElementById('inputText').value;
+
+      // Nettoyer et s�parer le texte en mots
+      var words = text.replace(/[!\.,:;\?]/g, '')
+                      .split(/\s+/)
+                      .map(function(d) {
+                          return { text: d, size: 10 + Math.random() * 60 };
+                      });
+
+      // Cr�er une nouvelle instance du nuage de mots
+      var myWordCloud = wordCloud('#wordCloud');
+
+      // Mettre � jour le nuage de mots avec les nouveaux mots
+      myWordCloud.update(words);
+
+      // Lancer l'animation des mots
+      myWordCloud.animateWords();
+  }
+  
+  </script>
+  
+
