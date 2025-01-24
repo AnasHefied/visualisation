@@ -1,4 +1,4 @@
-# Projet de Visualisation : Natalité et Décès  
+# Projet de Visualisation : Natalité et Décès en France d'outre-mer
 
 Ce projet est dédié à la visualisation des données sur la natalité et les décès à travers plusieurs graphiques interactifs. Il offre une analyse approfondie et une présentation claire des informations grâce à des outils modernes de visualisation.
 
